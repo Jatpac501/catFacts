@@ -105,6 +105,7 @@ body {
 }
 
 .oneMore {
+  cursor: pointer;
   font-family: "Fauna One";
   font-size: 28px;
   margin: 10px;
@@ -192,4 +193,17 @@ body {
 }
 .light .oneMore {
   background: rgba(255, 255, 255, 0.9);
+}
+
+.theme {
+  cursor: pointer;
+  color: var(--themeScnd);
+  background: var(--themePrm);
+  font-family: "Fauna One";
+  font-size: 24px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 5px 10px;
+  transition: 0.6s;
 }/*# sourceMappingURL=style.css.map */
