@@ -4,17 +4,20 @@
     margin: 0
     padding: 0
     box-sizing: border-box
+:root
+    --themePrm: #fff
+    --themeScnd: #000
 body
     font-family: 'Playfair Display', serif
     width: 100vw
     height: 100vh
-    background-color: #000
-    color: #000
+    background: var(--themeScnd)
+    color: var(--themeScnd)
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
-    overflow: hidden
+    overflowX: hidden
     
 .header
     width: 60%
@@ -25,13 +28,13 @@ body
 .earLeft
     width: 0
     height: 0
-    border-bottom: 100px solid #fff
+    border-bottom: 100px solid var(--themePrm)
     border-right: 100px solid transparent
     border-radius: 16px
 .earRight
     width: 0
     height: 0
-    border-bottom: 100px solid #fff
+    border-bottom: 100px solid var(--themePrm)
     border-left: 100px solid transparent
     border-radius: 16px
 .container
@@ -40,9 +43,9 @@ body
     flex-direction: column
     align-items: center
     justify-content: center
-    background: #fff
+    background: var(--themePrm)
     border-radius: 32px
-    border: 1px solid #fff
+    border: 1px solid var(--themePrm)
         
 .title
     text-align: center
@@ -50,31 +53,33 @@ body
     font-size: 82px
     font-weight: 700
 .box
+    z-index: 2
     width: 100%
     padding: 5px
-    background: #fff
-    transition: .3s ease
+    background: var(--themePrm)
+    
 .fact
     height: auto
     font-family: 'Fauna One'
-    color: #fff
-    background: #000
+    color: var(--themePrm)
+    background: var(--themeScnd)
     padding: 20px 20px
     border-radius: 26px
     font-size: 28px
     transition: .3s ease
     line-height: 100%
+    overflow: hidden
 #cursor
-    border: 0px solid #fff
+    border: 0px solid var(--themePrm)
     position: fixed
     width: 40px
     height: 40px
-    background: #fff
+    background: var(--themePrm)
     border-radius: 60%
     transform: translate(-50%, -50%)
     transition: all .1s ease-out, background 1s, border 1s
     &:hover
-        border: 1px dashed #fff
+        border: 1px dashed var(--themePrm)
         background: none
         border-radius: 30%
         width: 60px
@@ -101,7 +106,7 @@ body
     z-index: 9
     width: 100%
     height: 100%
-    background: #000
+    background: var(--themeScnd)
     transition: .5s 1s ease-out
     overflow: hidden
 .load__circle
@@ -111,8 +116,8 @@ body
     width: 100px
     height: 100px
     border-radius: 10%
-    border: 1px solid #fff
-    box-shadow: 0 0 15px #fff, inset 0 0 15px #fff
+    border: 1px solid var(--themePrm)
+    box-shadow: 0 0 15px var(--themePrm), inset 0 0 15px var(--themePrm)
     transition: .5s .5s ease
     animation: load__square 2s ease infinite
     &::before
@@ -120,7 +125,7 @@ body
         position: absolute
         width: 80px
         height: 80px
-        border: 1px solid #fff
+        border: 1px solid var(--themePrm)
         border-radius: 60%
         animation: load__circle 6s ease infinite
     &::after 
@@ -128,7 +133,7 @@ body
         position: absolute
         width: 100px
         height: 100px
-        border: 3px solid #fff
+        border: 3px solid var(--themePrm)
         border-radius: 60%
         animation: load__circle 3s ease infinite
 @keyframes load__circle
@@ -145,6 +150,9 @@ body
         transform: rotate(360deg)
 @media (max-width: 1000px)
     .header, .container
-        width: 80%
-
-    
+        width: 90%
+        padding: 20px 0
+.light
+    transition: .5s
+    .oneMore
+        background: rgba(255,255,255,.9)

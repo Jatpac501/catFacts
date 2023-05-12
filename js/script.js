@@ -33,7 +33,11 @@ let api = () => {
       fact.innerHTML = data.fact;
       oneMore.style.background = 'rgba(162,247,129,.8)';
       setTimeout(() => {
-        oneMore.style.background = 'rgba(0,0,0,.1)';
+        if (document.querySelector('body').classList.value == 'light') {
+          oneMore.style.background = 'rgba(255,255,255,.9)';
+        } else {
+          oneMore.style.background = 'rgba(0,0,0,.1)';
+        }
         fact.style.height = '100%';
         fact.style.padding = '20px';
         fact.style.lineHeight = '100%';
@@ -47,5 +51,14 @@ let api = () => {
 addEventListener("keydown", (e) => { 
   if (e.code === 'KeyD') {
     document.querySelector('body').classList.toggle('light');
+    if (document.querySelector('body').classList.value == 'light') {
+      document.documentElement.style.setProperty('--themePrm', '#000');
+      document.documentElement.style.setProperty('--themeScnd', '#fff');
+      oneMore.style.background = 'rgba(255,255,255,.9)';
+    } else {
+      document.documentElement.style.setProperty('--themePrm', '#fff');
+      document.documentElement.style.setProperty('--themeScnd', '#000');
+      oneMore.style.background = 'rgba(0,0,0,.1)';
+    }
   }
 });
