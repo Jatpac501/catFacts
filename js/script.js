@@ -1,15 +1,17 @@
-let cursor = document.querySelector('#cursor');
-let oneMore = document.querySelector('.oneMore');
-let fact = document.querySelector('.fact');
-let load = document.querySelector('.load');
-let load__circle = document.querySelector('.load__circle');
-let theme = document.querySelector('.theme');
+const cursor = document.querySelectorAll('.cursor');
+const oneMore = document.querySelector('.oneMore');
+const fact = document.querySelector('.fact');
+const load = document.querySelector('.load');
+const load__circle = document.querySelector('.load__circle');
+const theme = document.querySelector('.theme');
 addEventListener("DOMContentLoaded", () => {
   api();
+  setTimeout( () => {
   load__circle.style.boxShadow = '0 0 15px #0f0, inset 0 0 15px #0f0';
   load.style.width = '0px';
   load.style.height = '0px';
   load.style.opacity = '0';
+  }, 1000);
   setTimeout( () => {
     load.remove();
   }, 3000);
@@ -21,13 +23,13 @@ oneMore.addEventListener('click', () => {
     fact.style.height = '0px';
     api();
 });
-
-
 document.addEventListener('mousemove', (e) => {
-    cursor.style.top = e.pageY + 'px';
-    cursor.style.left = e.pageX + 'px';
+  for (let i = 0; i <= 5; i++) {
+    cursor[i].style.top = e.pageY+ 'px';
+    cursor[i].style.left = e.pageX + 'px';
+  }
 });
-let api = () => {
+const api = () => {
   fetch('https://catfact.ninja/fact')
     .then(response => response.json())
     .then(data => {

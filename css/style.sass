@@ -29,13 +29,13 @@ body
     width: 0
     height: 0
     border-bottom: 100px solid var(--themePrm)
-    border-right: 100px solid transparent
+    border-right: 150px solid transparent
     border-radius: 16px
 .earRight
     width: 0
     height: 0
     border-bottom: 100px solid var(--themePrm)
-    border-left: 100px solid transparent
+    border-left: 150px solid transparent
     border-radius: 16px
 .container
     width: 60%
@@ -69,7 +69,7 @@ body
     transition: .3s ease
     line-height: 100%
     overflow: hidden
-#cursor
+.cursor
     border: 0px solid var(--themePrm)
     position: fixed
     width: 40px
@@ -77,14 +77,14 @@ body
     background: var(--themePrm)
     border-radius: 60%
     transform: translate(-50%, -50%)
-    transition: all .1s ease-out, background 1s, border 1s
+    transition: all 300ms ease-out, background 1s, border 1s
     &:hover
+        background: var(--themeScnd)
         border: 1px dashed var(--themePrm)
         background: none
         border-radius: 30%
         width: 60px
         height: 60px
-
 .oneMore
     cursor: pointer
     font-family: 'Fauna One'
@@ -163,7 +163,7 @@ body
     background: var(--themePrm)
     font-family: 'Fauna One'
     font-size: 24px
-    position: absolute
+    position: fixed
     top: 20px
     left: 20px
     padding: 5px 10px
